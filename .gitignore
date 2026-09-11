@@ -1,4 +1,10 @@
-node_modules/
+```
+# Godot-specific ignores
+*.import
+*.remap
+export_presets.cfg
+.user
+```node_modules/
 .next/
 dist/
 build/

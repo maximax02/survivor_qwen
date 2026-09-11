@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource name="Main" type="PackedScene">
+ <node name="Main" type="Node3D">
+  <node name="WorldEnvironment" type="WorldEnvironment">
+   <node name="Environment" type="Environment" resource_type="Environment">
+    <property name="ambient_light_source">2</property>
+    <property name="ambient_light_color">Color(0.5, 0.5, 0.5, 1)</property>
+    <property name="ambient_light_energy">1.0</property>
+   </node>
+  </node>
+  <node name="DirectionalLight3D" type="DirectionalLight3D">
+   <property name="transform">
+    <transform3D x="(1, 0, 0) y=(0, 1, 0) z=(0, 0, 1) o=(0, 10, 0)" r="(1.178097, -0.392699, 0)"/>
+   </property>
+   <property name="light_energy">1.5</property>
+   <property name="shadow_enabled">true</property>
+  </node>
+  <node name="Ground" type="StaticBody3D">
+   <property name="transform">
+    <transform3D x="(1, 0, 0) y=(0, 1, 0) z=(0, 0, 1) o=(0, 0, 0)"/>
+   </property>
+   <node name="CollisionShape3D" type="CollisionShape3D">
+    <property name="transform">
+     <transform3D x="(1, 0, 0) y=(0, 1, 0) z=(0, 0, 1) o=(0, 0, 0)"/>
+    </property>
+    <node name="Shape" type="BoxShape3D" resource_type="BoxShape3D">
+     <property name="size">Vector3(100, 1, 100)</property>
+    </node>
+   </node>
+   <node name="MeshInstance3D" type="MeshInstance3D">
+    <property name="transform">
+     <transform3D x="(1, 0, 0) y=(0, 1, 0) z=(0, 0, 1) o=(0, -0.5, 0)"/>
+    </property>
+    <node name="Mesh" type="BoxMesh" resource_type="BoxMesh">
+     <property name="size">Vector3(100, 1, 100)</property>
+    </node>
+    <node name="Material" type="StandardMaterial3D" resource_type="StandardMaterial3D">
+     <property name="albedo_color">Color(0.2, 0.6, 0.2, 1)</property>
+    </node>
+   </node>
+  </node>
+  <node name="Player" instance="res://scenes/Player.tscn">
+   <property name="transform">
+    <transform3D x="(1, 0, 0) y=(0, 1, 0) z=(0, 0, 1) o=(0, 0, 0)"/>
+   </property>
+  </node>
+ </node>
+</resource>
